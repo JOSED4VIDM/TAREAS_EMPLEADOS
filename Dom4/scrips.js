@@ -37,10 +37,19 @@ function agregarTarea() {
     nombreResponsable.textContent = "Encargado de hacer la tarea: " + responsable;
     nombreResponsable.classList.add("responsable");
 
+    let fechaCreacion = document.createElement("small");
+    fechaCreacion.textContent = "Creada: " + new Intl.DateTimeFormat("es-CO", {
+        dateStyle: "short",
+        timeStyle: "medium",
+        timeZone: "America/Bogota"
+    }).format(new Date());
+    fechaCreacion.classList.add("fecha");
+
     let informacion = document.createElement("div");
     informacion.classList.add("informacion");
     informacion.appendChild(textoTarea);
     informacion.appendChild(nombreResponsable);
+    informacion.appendChild(fechaCreacion);
 
     let progreso = document.createElement("div");
     progreso.classList.add("progreso");

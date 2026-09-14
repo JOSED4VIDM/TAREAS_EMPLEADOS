@@ -144,6 +144,11 @@ li {
     font-size: 13px;
 }
 
+.fecha {
+    color: var(--muted);
+    font-size: 12px;
+}
+
 .progreso {
     display: flex;
     flex: 1.4;
