@@ -1,0 +1,214 @@
+:root {
+    color-scheme: dark;
+    --fondo: #080808;
+    --panel: #111111;
+    --superficie: #181818;
+    --borde: #2c2c2c;
+    --texto: #f5f5f5;
+    --muted: #929292;
+    --acento: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 32px 16px;
+    color: var(--texto);
+    background: var(--fondo);
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.contenedor {
+    width: min(820px, 100%);
+    padding: clamp(24px, 5vw, 48px);
+    background: var(--panel);
+    border: 1px solid var(--borde);
+    border-radius: 14px;
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.45);
+}
+
+h1 {
+    margin-bottom: 8px;
+    color: var(--texto);
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 650;
+    letter-spacing: -1px;
+}
+
+p {
+    margin-bottom: 32px;
+    color: var(--muted);
+    font-size: 15px;
+}
+
+.entrada {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.campo {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 8px;
+}
+
+label {
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+input {
+    min-width: 0;
+    flex: 1;
+    padding: 13px 14px;
+    color: var(--texto);
+    background: #0b0b0b;
+    border: 1px solid var(--borde);
+    border-radius: 7px;
+    outline: none;
+    font: inherit;
+    transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+input:focus {
+    border-color: #8d8d8d;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.08);
+}
+
+button {
+    border: 1px solid transparent;
+    border-radius: 7px;
+    cursor: pointer;
+    font: inherit;
+    transition: background 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+#botonAgregar {
+    display: block;
+    margin: 0 0 36px auto;
+    padding: 12px 20px;
+    color: #080808;
+    background: var(--acento);
+    font-size: 14px;
+    font-weight: 650;
+}
+
+#botonAgregar:hover {
+    background: #d4d4d4;
+}
+
+ul {
+    list-style: none;
+    border-top: 1px solid var(--borde);
+}
+
+li {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--borde);
+}
+
+.informacion {
+    min-width: 180px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.tareaTexto {
+    color: var(--texto);
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.responsable {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.progreso {
+    display: flex;
+    flex: 1.4;
+    align-items: center;
+    gap: 10px;
+}
+
+.progreso input {
+    width: 100%;
+    height: 4px;
+    padding: 0;
+    accent-color: var(--acento);
+    cursor: pointer;
+}
+
+.porcentaje {
+    min-width: 38px;
+    color: var(--muted);
+    font-size: 13px;
+    text-align: right;
+}
+
+.completada {
+    color: var(--muted);
+    text-decoration: line-through;
+}
+
+.botones {
+    display: flex;
+    gap: 6px;
+}
+
+.completar,
+.eliminar {
+    width: 34px;
+    height: 34px;
+    color: var(--muted);
+    background: transparent;
+    border-color: var(--borde);
+}
+
+.completar:hover,
+.eliminar:hover {
+    color: var(--texto);
+    border-color: #666666;
+    background: var(--superficie);
+}
+
+@media (max-width: 620px) {
+    body {
+        align-items: flex-start;
+        padding-top: 20px;
+    }
+
+    .entrada,
+    li {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #botonAgregar {
+        margin-bottom: 28px;
+    }
+
+    .botones {
+        justify-content: flex-end;
+    }
+}
